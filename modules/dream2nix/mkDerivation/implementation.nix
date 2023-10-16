@@ -42,7 +42,7 @@
 in {
   imports = [
     ../core
-    ../package-func/implementation.nix
+    ../package-func
   ];
 
   config.package-func.outputs = cfg.outputs;
@@ -60,4 +60,8 @@ in {
       inherit (config.public) version;
       pname = config.name;
     };
+
+  config.deps = {nixpkgs, ...}: {
+    stdenv = lib.mkOverride 1050 nixpkgs.stdenv;
+  };
 }
