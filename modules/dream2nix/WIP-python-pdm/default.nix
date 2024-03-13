@@ -133,7 +133,7 @@ in {
           };
           mkDerivation = {
             # TODO: handle sources outside pypi.org
-            src = lib.mkDefault (dream2nix.inputs.nixpkgs.fetchPypiLegacy {
+            src = lib.mkDefault (dream2nix.inputs.nixpkgs.legacyPackages.targetPlatform.fetchPypiLegacy {
               pname = name;
               file = source.file;
               hash = source.hash;
