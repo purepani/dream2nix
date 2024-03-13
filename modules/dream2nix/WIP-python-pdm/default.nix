@@ -12,14 +12,6 @@
   };
 
   libpyproject = import (dream2nix.inputs.pyproject-nix + "/lib") {inherit lib;};
-  libpyproject-fetchers = import (dream2nix.inputs.pyproject-nix + "/fetchers") {
-    inherit lib;
-    curl = config.deps.curl;
-    jq = config.deps.jq;
-    python3 = config.deps.python;
-    runCommand = config.deps.runCommand;
-    stdenvNoCC = config.deps.stdenvNoCC;
-  };
 
   lock_data = lib.importTOML config.pdm.lockfile;
   environ = libpyproject.pep508.mkEnviron config.deps.python;
@@ -141,7 +133,7 @@ in {
           };
           mkDerivation = {
             # TODO: handle sources outside pypi.org
-            src = lib.mkDefault (libpyproject-fetchers.fetchFromLegacy {
+            src = lib.mkDefault (dream2nix.inputs.nixpkgs.fetchPypilegacy {
               pname = name;
               file = source.file;
               hash = source.hash;
