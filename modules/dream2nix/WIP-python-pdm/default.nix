@@ -2,6 +2,7 @@
   config,
   lib,
   dream2nix,
+  packageSets,
   ...
 }: let
   libpdm = import ./lib.nix {
@@ -133,7 +134,7 @@ in {
           };
           mkDerivation = {
             # TODO: handle sources outside pypi.org
-            src = lib.mkDefault (dream2nix.inputs.nixpkgs.legacyPackages.targetPlatform.fetchPypiLegacy {
+            src = lib.mkDefault (packageSets.nixpkgs.fetchPypiLegacy {
               pname = name;
               file = source.file;
               hash = source.hash;
