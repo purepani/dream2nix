@@ -27,7 +27,7 @@
 
     repo_path = Path(subprocess.run(
         ['${config.paths.findRoot}'],  # noqa: E501
-        check=True, text=True, capture_output=True
+        check=True, text=True, stdout=subprocess.PIPE
     ).stdout.strip())
     lock_path_rel = Path('${config.paths.package}/${config.paths.lockFile}')  # noqa: E501
     lock_path = repo_path / lock_path_rel.relative_to(lock_path_rel.anchor)
@@ -47,7 +47,7 @@
     refresh_scripts = json.loads('${l.toJSON cfg.fields}')  # noqa: E501
     repo_path = Path(subprocess.run(
         ['${config.paths.findRoot}'],  # noqa: E501
-        check=True, text=True, capture_output=True)
+        check=True, text=True, stdout=subprocess.PIPE)
         .stdout.strip())
     lock_path_rel = Path('${config.paths.package}/${config.paths.lockFile}')  # noqa: E501
     lock_path = repo_path / lock_path_rel.relative_to(lock_path_rel.anchor)
@@ -200,7 +200,7 @@ in {
 
   config = {
     lock.refresh = config.deps.writeScriptBin "refresh" ''
-      #!/usr/bin/env bash
+      #!${config.deps.bash}/bin/bash
       set -Eeuo pipefail
 
       ### Executing auto generated refresh script
@@ -220,8 +220,8 @@ in {
     lock.lib = {inherit computeFODHash;};
 
     deps = {nixpkgs, ...}:
-      l.mapAttrs (_: l.mkDefault) {
-        inherit (nixpkgs) nix writeScriptBin;
+      l.mapAttrs (_: l.mkOverride 1004) {
+        inherit (nixpkgs) bash nix writeScriptBin;
         inherit (nixpkgs.writers) writePython3 writePython3Bin;
       };
   };

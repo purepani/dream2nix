@@ -1,0 +1,21 @@
+name: update-flake-lock
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 18 * * *' # runs daily at 18:15 UTC
+
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Update flake.lock
+        uses: DavHau/update-flake-lock@main
+        with:
+          pr-title: "Update nixpkgs"
+          pr-labels: dependencies
+          inputs: nixpkgs
+          flake-dirs: . ./dev-flake

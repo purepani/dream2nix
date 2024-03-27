@@ -1,6 +1,6 @@
 {
   overrideAll,
-  globalOverrides,
+  overrides,
 }: {
   config,
   dream2nix,
@@ -12,13 +12,12 @@
   packageType = name:
     t.deferredModuleWith {
       staticModules = [
-        {_module.args = specialArgs;}
         # the top-level overrideAll
         overrideAll
         # the overrideAll of the current group
         config.overrideAll
         # the global overrides
-        (globalOverrides.${name} or {})
+        (overrides.${name} or {})
         # the overrides of the current group
         (config.overrides.${name} or {})
       ];
@@ -33,9 +32,12 @@ in {
       default = {};
     };
     overrides = lib.mkOption {
+      # TODO: This version of deferredModuleWith might lead to an infinite
+      #   recursion because it doesn't support specialArgs
+      #   (see custom deferredModuleWith in ../overrides/default.nix)
       type = t.lazyAttrsOf (t.deferredModuleWith {
         staticModules = [
-          {_module.args = specialArgs;}
+          {_module.args = specialArgs // {inherit specialArgs;};}
         ];
       });
       description = ''

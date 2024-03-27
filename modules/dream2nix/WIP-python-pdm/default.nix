@@ -39,16 +39,17 @@
       then (lib.head (lib.attrValues config.groups.default.packages.setuptools)).public
       else config.deps.python.pkgs.setuptools;
   in {
-    mkDerivation.buildInputs =
+    imports = [
+      dream2nix.modules.dream2nix.buildPythonPackage
+    ];
+    config.mkDerivation.buildInputs =
       lib.optionals
       (! lib.hasSuffix ".whl" cfg.mkDerivation.src)
       [setuptools];
   };
 in {
   imports = [
-    dream2nix.modules.dream2nix.WIP-groups
-    dream2nix.modules.dream2nix.buildPythonPackage
-    ../core/deps
+    ../overrides
     ./interface.nix
     ./lock.nix
     commonModule
@@ -68,18 +69,21 @@ in {
       buildPackages
       curl
       jq
+      mkShell
+      pdm
       runCommand
       stdenvNoCC
       stdenv
       ;
     python = lib.mkDefault config.deps.python3;
   };
-  overrideAll = {
+  overrideType = {
     imports = [commonModule];
+  };
+  overrideAll = {
     deps = {nixpkgs, ...}: {
       python = lib.mkDefault config.deps.python;
     };
-    sourceSelector = lib.mkOptionDefault config.pdm.sourceSelector;
   };
   pdm.sourceSelector = lib.mkDefault libpdm.preferWheelSelector;
   buildPythonPackage = {
@@ -93,6 +97,18 @@ in {
       # all packages attrs prefixed with version
       (lib.attrValues config.groups.default.packages);
   };
+  public.devShell = let
+    interpreter = config.deps.python.withPackages (
+      ps:
+        config.mkDerivation.propagatedBuildInputs
+    );
+  in
+    config.deps.mkShell {
+      packages = [
+        config.deps.pdm
+        interpreter
+      ];
+    };
   groups = let
     groupNames = lib.attrNames groups_with_deps;
     populateGroup = groupname: let
@@ -124,7 +140,8 @@ in {
             (dream2nix.overrides.python.${name} or {})
           ];
           inherit name;
-          version = pkg.version;
+          version = lib.mkDefault pkg.version;
+          sourceSelector = lib.mkOptionDefault config.pdm.sourceSelector;
           buildPythonPackage = {
             format = lib.mkDefault (
               if lib.hasSuffix ".whl" source.file

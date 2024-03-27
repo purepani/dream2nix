@@ -49,11 +49,6 @@
       source = pdefs.${name}.${version}.source;
     };
 
-  nameVersionPair = name: version: {
-    name = name;
-    version = version;
-  };
-
   # name: version: -> [ {name=; version=; } ]
   getDependencies = pname: version:
     l.filter
@@ -87,6 +82,8 @@
           imports = [
             (commonModule name version)
             (depsModule name version)
+            cfg.overrideAll
+            (cfg.overrides.${name} or {})
           ];
         })
         versions
@@ -294,6 +291,7 @@ in {
   imports = [
     ./interface.nix
     dream2nix.modules.dream2nix.mkDerivation
+    dream2nix.modules.dream2nix.core
     (commonModule defaultPackageName defaultPackageVersion)
   ];
   deps = {nixpkgs, ...}:

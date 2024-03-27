@@ -13,13 +13,13 @@ To use multiple packages in a repository, keep only each packages' `default.nix`
 
 ## Usage example
 
-For example, in order to initialize a php-package from `packages/single-language/php-package/`:
+For example, in order to initialize a php-package from `packages/languages/php-packaging/`:
 
 ```shellSession
 # create new single package repo for php
 $ mkdir my-dream2nix-package
 $ cd my-dream2nix-package
-$ nix flake init -t github:nix-community/dream2nix#templates.php-package
+$ nix flake init -t github:nix-community/dream2nix#templates.php-packaging
 wrote: /tmp/my-dream2nix-package/flake.nix
 wrote: /tmp/my-dream2nix-package/default.nix
 

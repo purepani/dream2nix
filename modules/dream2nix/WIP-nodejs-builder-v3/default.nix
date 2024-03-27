@@ -13,6 +13,10 @@
   inherit (config.deps) fetchurl;
 
   nodejsLockUtils = import ../../../lib/internal/nodejsLockUtils.nix {inherit lib;};
+  nodejsUtils = import ../../../lib/internal/nodejsUtils.nix {
+    inherit lib;
+    parseSpdxId = _: _;
+  };
   graphUtils = import ../../../lib/internal/graphUtils.nix {inherit lib;};
   utils = import ./utils.nix {inherit lib;};
 
@@ -21,52 +25,66 @@
   pdefs = parse cfg.packageLock;
 
   parseSource = plent: name:
-    if isLink plent
-    then
-      # entry is local file
-      (builtins.dirOf cfg.packageLockFile) + "/${plent.resolved}"
-    else
-      config.deps.mkDerivation {
-        inherit name;
-        inherit (plent) version;
-        src = fetchurl {
-          url = plent.resolved;
-          hash = plent.integrity;
-        };
-        dontBuild = true;
-        unpackPhase = ''
-          runHook preUnpack
-          unpackFallback(){
-            local fn="$1"
-            tar xf "$fn"
-          }
-          unpackCmdHooks+=(unpackFallback)
-          unpackFile $src
-          chmod -R +X .
-          runHook postUnpack
-        '';
-        installPhase = ''
-          if [ -f "$src" ]
-          then
-            # Figure out what directory has been unpacked
-            packageDir="$(find . -maxdepth 1 -type d | tail -1)"
-            echo "packageDir $packageDir"
-            # Restore write permissions
-            find "$packageDir" -type d -exec chmod u+x {} \;
-            chmod -R u+w -- "$packageDir"
-            # Move the extracted tarball into the output folder
-            mv -- "$packageDir" $out
-          elif [ -d "$src" ]
-          then
-            strippedName="$(stripHash $src)"
-            echo "strippedName $strippedName"
-            # Restore write permissions
-            chmod -R u+w -- "$strippedName"
-            # Move the extracted directory into the output folder
-            mv -- "$strippedName" $out
-          fi
-        '';
-      };
+    l.warnIfNot (plent ? resolved) "Package ${name}/${plent.version} didn't provide 'resolved' where the package can be fetched from."
+    (
+      if isLink plent
+      then
+        # entry is local file
+        (builtins.dirOf cfg.packageLockFile) + "/${plent.resolved}"
+      else if nodejsUtils.identifyGitUrl plent.resolved
+      then
+        # entry is a git dependency
+        builtins.fetchGit
+        (nodejsUtils.parseGitUrl plent.resolved)
+        // {
+          shallow = true;
+        }
+      else
+        # entry is a regular tarball / archive
+        # which usually comes from the npmjs registry
+        l.warnIfNot (plent ? integrity) "Package ${name}/${plent.version} didn't provide 'integrity' field, which is required for url dependencies."
+        config.deps.mkDerivation {
+          inherit name;
+          inherit (plent) version;
+          src = fetchurl {
+            url = plent.resolved;
+            hash = plent.integrity;
+          };
+          dontBuild = true;
+          unpackPhase = ''
+            runHook preUnpack
+            unpackFallback(){
+              local fn="$1"
+              tar xf "$fn"
+            }
+            unpackCmdHooks+=(unpackFallback)
+            unpackFile $src
+            chmod -R +X .
+            runHook postUnpack
+          '';
+          installPhase = ''
+            if [ -f "$src" ]
+            then
+              # Figure out what directory has been unpacked
+              packageDir="$(find . -maxdepth 1 -type d | tail -1)"
+              echo "packageDir $packageDir"
+              # Restore write permissions
+              find "$packageDir" -type d -exec chmod u+x {} \;
+              chmod -R u+w -- "$packageDir"
+              # Move the extracted tarball into the output folder
+              mv -- "$packageDir" $out
+            elif [ -d "$src" ]
+            then
+              strippedName="$(stripHash $src)"
+              echo "strippedName $strippedName"
+              # Restore write permissions
+              chmod -R u+w -- "$strippedName"
+              # Move the extracted directory into the output folder
+              mv -- "$strippedName" $out
+            fi
+          '';
+        }
+    );
   # Lock -> Pdefs
   parse = lock:
     builtins.foldl'
@@ -144,14 +162,9 @@
   # plent :: The lock entry. Includes meta information about the package.
   parseEntry = lock: path: plent: let
     info = utils.getInfo path plent;
-    makeNodeModules = ./build-node-modules.mjs;
-    installTrusted = ./install-trusted-modules.mjs;
-  in
-    if path == ""
-    then let
-      rinfo = info // {inherit fileSystem;};
-      name = plent.name or lock.name;
 
+    rootPackage = let
+      ## ----------- Metainformations ----------
       fileSystem = graphUtils.getFileSystem pdefs (utils.getSanitizedGraph {
         inherit plent pdefs;
       });
@@ -162,119 +175,63 @@
         };
       });
 
+      rinfo = info // {inherit fileSystem;};
+      name = plent.name or lock.name;
+
       self = config.groups.all.packages.${name}.${plent.version}.evaluated;
-
-      prepared-dev = let
-        module = {
-          imports = [
-            # config.groups.all.packages.${name}.${plent.version}
-            dream2nix.modules.dream2nix.mkDerivation
-          ];
-          config = {
-            inherit (plent) version;
-            name = name + "-node_modules-dev";
-            env = {
-              FILESYSTEM = builtins.toJSON fileSystem;
-            };
-
-            mkDerivation = {
-              dontUnpack = true;
-              buildInputs = with config.deps; [nodejs];
-              buildPhase = ''
-                node ${makeNodeModules}
-              '';
-            };
-          };
-        };
-      in
-        module;
-
-      prepared-prod = let
-        module = {
-          imports = [
-            dream2nix.modules.dream2nix.mkDerivation
-          ];
-          config = {
-            inherit (plent) version;
-            name = name + "-node_modules-prod";
-            env = {
-              FILESYSTEM = builtins.toJSON fileSystemProd;
-            };
-            mkDerivation = {
-              dontUnpack = true;
-              buildInputs = with config.deps; [nodejs];
-              buildPhase = ''
-                node ${makeNodeModules}
-              '';
-            };
-          };
-        };
-      in
-        module;
 
       bins = getBins path plent;
 
-      installed = config.deps.mkDerivation {
-        inherit (plent) version;
-        name = name + "-installed";
-        nativeBuildInputs = with config.deps; [jq];
-        buildInputs = with config.deps; [nodejs];
-        src = self.dist;
-        env = {
-          BINS = builtins.toJSON bins;
-        };
-        configurePhase = ''
-          cp -r ${self.prepared-prod}/node_modules node_modules
-        '';
-        installPhase = ''
-          mkdir -p $out/lib/node_modules/${name}
-          cp -r . $out/lib/node_modules/${name}
+      ## ----------- Output derviations ----------
 
-          mkdir -p $out/bin
-          echo $BINS | jq 'to_entries | map("ln -s $out/lib/node_modules/${name}/\(.value) $out/bin/\(.key); ") | .[]' -r | bash
-        '';
+      prepared-dev = {
+        imports = [
+          ./modules/prepared-dev.nix
+        ];
+        _module.args = {
+          packageName = name;
+          inherit plent fileSystem;
+          inherit (config.deps) nodejs;
+        };
       };
+
       dist = {
         imports = [
-          dream2nix.modules.dream2nix.mkDerivation
+          ./modules/dist.nix
         ];
-        config = {
-          inherit (plent) version;
-          name = name + "-dist";
-          env = {
-            TRUSTED = builtins.toJSON cfg.trustedDeps;
-          };
-          mkDerivation = {
-            # inherit (entry) version;
-            src = builtins.dirOf cfg.packageLockFile;
-            buildInputs = with config.deps; [nodejs jq];
-            configurePhase = ''
-              cp -r ${self.prepared-dev}/node_modules node_modules
-              chmod -R +w node_modules
-              node ${installTrusted}
-            '';
-            buildPhase = ''
-              echo "BUILDING... $name"
+        _module.args = {
+          packageName = name;
+          inherit plent;
+          inherit (cfg) packageLockFile trustedDeps;
+          inherit (self) prepared-dev;
+          inherit (config.deps) nodejs jq;
+        };
+      };
 
-              if [ "$(jq -e '.scripts.build' ./package.json)" != "null" ]; then
-                echo "BUILDING... $name"
-                export HOME=.virt
-                npm run build
-              else
-                echo "$(jq -e '.scripts.build' ./package.json)"
-                echo "No build script";
-              fi;
-            '';
-            installPhase = ''
-              # TODO: filter files
-              rm -rf node_modules
-              cp -r . $out
-            '';
-          };
+      prepared-prod = {
+        imports = [
+          ./modules/prepared-prod.nix
+        ];
+        _module.args = {
+          packageName = name;
+          fileSystem = fileSystemProd;
+          inherit plent;
+          inherit (config.deps) nodejs;
+        };
+      };
+
+      installed = {
+        imports = [
+          ./modules/installed.nix
+        ];
+        _module.args = {
+          packageName = name;
+          inherit bins plent;
+          inherit (self) dist prepared-prod;
+          inherit (config.deps) nodejs jq;
         };
       };
     in {
-      # Root level package
       name = name;
       value = {
         ${plent.version} = {
@@ -286,13 +243,15 @@
           public =
             self.dist
             // {
-              inherit installed;
+              # other derivations
+              inherit (self) installed prepared-dev prepared-prod;
             };
         };
       };
-    }
-    # End Root level package
-    else let
+    };
+
+    ## --------- leaf package ------------
+    leafPackage = let
       name = l.last (builtins.split "node_modules/" path);
       source = parseSource plent name;
       bins = getBins path plent;
@@ -321,11 +280,16 @@
           };
         };
       };
+  in
+    if path == ""
+    then rootPackage
+    else leafPackage;
 in {
   inherit groups;
 
   imports = [
     ./interface.nix
+    dream2nix.modules.dream2nix.core
     dream2nix.modules.dream2nix.mkDerivation
     dream2nix.modules.dream2nix.WIP-groups
   ];

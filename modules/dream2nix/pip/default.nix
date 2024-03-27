@@ -33,6 +33,8 @@
         imports = [
           commonModule
           dependencyModule
+          cfg.overrideAll
+          (cfg.overrides.${name} or {})
           # include community overrides
           (dream2nix.overrides.python.${name} or {})
         ];
@@ -74,6 +76,7 @@
   commonModule = {config, ...}: {
     imports = [
       dream2nix.modules.dream2nix.mkDerivation
+      dream2nix.modules.dream2nix.core
       ../buildPythonPackage
     ];
     config = {
@@ -135,7 +138,7 @@ in {
         inherit (cfg) env pypiSnapshotDate pipFlags pipVersion requirementsList requirementsFiles nativeBuildInputs;
         inherit (config.deps) writePureShellScript nix;
         inherit (config.paths) findRoot;
-        inherit (nixpkgs) gitMinimal nix-prefetch-scripts python3 writeText openssh;
+        inherit (nixpkgs) fetchFromGitHub fetchurl gitMinimal nix-prefetch-scripts openssh python3 rustPlatform writeText;
         pythonInterpreter = "${python}/bin/python";
       };
       setuptools = config.deps.python.pkgs.setuptools;

@@ -165,10 +165,11 @@
       if version == "unknown"
       then "0.0.0"
       else version;
-
-    module = {config, ...}: {
+  in
+    {config, ...}: {
       imports = [
         dream2nix.modules.dream2nix.mkDerivation
+        dream2nix.modules.dream2nix.core
       ];
       deps = {nixpkgs, ...}:
         l.mapAttrs (_: l.mkDefault) {
@@ -289,8 +290,6 @@
         '';
       };
     };
-  in
-    module;
 in {
   imports = [
     ./interface.nix
@@ -308,7 +307,9 @@ in {
           imports = [
             ./interface.nix
             (commonModule name version)
-            dream2nix.modules.dream2nix.mkDerivation
+            cfg.overrideType
+            cfg.overrideAll
+            (cfg.overrides.${name} or {})
           ];
           inherit name version;
         }
