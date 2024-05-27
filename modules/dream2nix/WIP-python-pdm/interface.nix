@@ -15,6 +15,15 @@ in {
       type = t.path;
     };
 
+    editables = l.mkOption {
+      type = t.attrsOf t.str;
+    };
+
+    editablesShellHook = l.mkOption {
+      type = t.str;
+      readOnly = true;
+    };
+
     sourceSelector = import ./sourceSelectorOption.nix {inherit lib;};
   };
   options.groups =

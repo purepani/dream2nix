@@ -24,6 +24,8 @@
   lock_data = lib.importTOML config.pdm.lockfile;
   environ = libpyproject.pep508.mkEnviron config.deps.python;
 
+  editables = lib.filterAttrs (_name: path: path != false) config.pdm.editables;
+
   pyproject = libpdm.loadPdmPyProject (lib.importTOML config.pdm.pyproject);
 
   groups_with_deps = libpdm.groupsWithDeps {
@@ -81,6 +83,8 @@ in {
       runCommand
       stdenvNoCC
       stdenv
+      writeText
+      unzip
       ;
     python = lib.mkDefault config.deps.python3;
   };
@@ -92,7 +96,20 @@ in {
       python = lib.mkDefault config.deps.python;
     };
   };
-  pdm.sourceSelector = lib.mkDefault libpdm.preferWheelSelector;
+  pdm = {
+    sourceSelector = lib.mkDefault libpdm.preferWheelSelector;
+    editables =
+      # make root package always editable
+      {${config.name} = config.paths.package;};
+    editablesShellHook = import ./editable.nix {
+      inherit lib;
+      inherit (config.deps) unzip writeText;
+      inherit (config.paths) findRoot;
+      inherit (config.public) pyEnv;
+      inherit (config.pdm) editables;
+      rootName = config.name;
+    };
+  };
   buildPythonPackage = {
     format = lib.mkDefault "pyproject";
   };
@@ -106,19 +123,41 @@ in {
   };
 
   public.pyEnv = let
-    pyEnv' = config.deps.python.withPackages (ps: config.mkDerivation.propagatedBuildInputs);
+    pyEnv' = config.deps.python.withPackages (
+      ps:
+        config.mkDerivation.propagatedBuildInputs
+        # the editableShellHook requires wheel and other build system deps.
+        ++ config.mkDerivation.buildInputs
+        ++ [config.deps.python.pkgs.wheel]
+    );
   in
     pyEnv'.override (old: {
       # namespaced packages are triggering a collision error, but this can be
       # safely ignored. They are still set up correctly and can be imported.
       ignoreCollisions = true;
     });
+  public.shellHook = config.pdm.editablesShellHook;
 
   public.devShell = config.deps.mkShell {
+    shellHook = config.public.shellHook;
     packages = [
       config.public.pyEnv
       config.deps.pdm
     ];
+    buildInputs =
+      [
+        config.deps.python.pkgs.tomli
+      ]
+      ++ lib.flatten (
+        lib.mapAttrsToList
+        (name: _path: config.groups.default.overrides.${name}.mkDerivation.buildInputs or [])
+        editables
+      );
+    nativeBuildInputs = lib.flatten (
+      lib.mapAttrsToList
+      (name: _path: config.groups.default.overrides.${name}.mkDerivation.nativeBuildInputs or [])
+      editables
+    );
   };
 
   groups = let

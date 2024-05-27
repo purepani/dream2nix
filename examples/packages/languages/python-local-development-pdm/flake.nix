@@ -2,7 +2,7 @@
   description = "My flake with dream2nix packages";
 
   inputs = {
-    dream2nix.url = "path:/home/satwik/projects/dream2nix";
+    dream2nix.url = "github:nix-community/dream2nix";
     nixpkgs.follows = "dream2nix/nixpkgs";
   };
 
