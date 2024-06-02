@@ -6,25 +6,22 @@
 }: let
   l = lib // builtins;
   t = l.types;
+  mkSubmodule = import ../../../lib/internal/mkSubmodule.nix {inherit lib specialArgs;};
 in {
-  options.pdm = {
-    lockfile = l.mkOption {
-      type = t.path;
-    };
-    pyproject = l.mkOption {
-      type = t.path;
-    };
+  options.pdm = mkSubmodule {
+    imports = [
+      ../python-editables
+    ];
+    options = {
+      lockfile = l.mkOption {
+        type = t.path;
+      };
+      pyproject = l.mkOption {
+        type = t.path;
+      };
 
-    editables = l.mkOption {
-      type = t.attrsOf t.str;
+      sourceSelector = import ./sourceSelectorOption.nix {inherit lib;};
     };
-
-    editablesShellHook = l.mkOption {
-      type = t.str;
-      readOnly = true;
-    };
-
-    sourceSelector = import ./sourceSelectorOption.nix {inherit lib;};
   };
   options.groups =
     (import ../WIP-groups/groups-option.nix {inherit config lib specialArgs;})

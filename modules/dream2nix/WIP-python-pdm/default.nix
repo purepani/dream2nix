@@ -109,6 +109,7 @@ in {
       inherit (config.pdm) editables;
       rootName = config.name;
     };
+    inherit (config) overrides overrideAll;
   };
   buildPythonPackage = {
     format = lib.mkDefault "pyproject";

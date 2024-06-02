@@ -177,19 +177,10 @@ in {
 
   pip = {
     drvs = drvs;
+    inherit (config) name paths;
+    inherit (config.public) pyEnv;
     rootDependencies =
       l.genAttrs (targets.default.${config.name} or []) (_: true);
-    editables =
-      # make root package always editable
-      {${config.name} = config.paths.package;};
-    editablesShellHook = import ./editable.nix {
-      inherit lib;
-      inherit (config.deps) unzip writeText;
-      inherit (config.paths) findRoot;
-      inherit (config.public) pyEnv;
-      inherit (cfg) editables;
-      rootName = config.name;
-    };
   };
 
   mkDerivation = {
@@ -237,20 +228,5 @@ in {
   # a shell hook for composition purposes
   public.shellHook = config.pip.editablesShellHook;
   # a dev shell for development
-  public.devShell = config.deps.mkShell {
-    packages = [config.public.pyEnv];
-    shellHook = config.public.shellHook;
-    buildInputs =
-      [(config.pip.drvs.tomli.public or config.deps.python.pkgs.tomli)]
-      ++ lib.flatten (
-        lib.mapAttrsToList
-        (name: _path: config.pip.drvs.${name}.mkDerivation.buildInputs or [])
-        editables
-      );
-    nativeBuildInputs = lib.flatten (
-      lib.mapAttrsToList
-      (name: _path: config.pip.drvs.${name}.mkDerivation.nativeBuildInputs or [])
-      editables
-    );
-  };
+  public.devShell = config.pip.editablesDevShell;
 }
