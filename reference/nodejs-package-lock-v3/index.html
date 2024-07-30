@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://nix-community.github.io/dream2nix/reference/nodejs-package-lock-v3/">
+        <link rel="canonical" href="https://dream2nix.dev/reference/nodejs-package-lock-v3/">
       
       
         <link rel="prev" href="../nodejs-package-lock/">
@@ -238,16 +238,80 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../gettingstarted/" class="md-nav__link">
+      <a href="../../guides/getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Getting Started
+    Getting started
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python & pip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -372,6 +436,681 @@
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodejs-granular-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-granular-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodejs-package-json-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-package-json-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    nodejs-package-lock-v3
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-package-lock-v3
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#introduction" class="md-nav__link">
+      <span class="md-ellipsis">
+        Introduction
+      </span>
+    </a>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#options" class="md-nav__link">
+      <span class="md-ellipsis">
+        Options
+      </span>
+    </a>
+    
+      <nav class="md-nav" aria-label="Options">
+        <ul class="md-nav__list">
+          
+            <li class="md-nav__item">
+    <a href="#deps" class="md-nav__link">
+      <span class="md-ellipsis">
+        deps
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#env" class="md-nav__link">
+      <span class="md-ellipsis">
+        env
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockcontent" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>content
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockextrascripts" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>extraScripts
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockfields" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>fields
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockfieldsnamedefault" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>fields.<wbr>&lt;name&gt;.<wbr>default
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockfieldsnamescript" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>fields.<wbr>&lt;name&gt;.<wbr>script
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockinvalidationdata" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>invalidationData
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockisvalid" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>isValid
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#locklibcomputefodhash" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>lib.<wbr>computeFODHash
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#lockrefresh" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>refresh
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#name" class="md-nav__link">
+      <span class="md-ellipsis">
+        name
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3packagelock" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>packageLock
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3packagelockfile" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>packageLockFile
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefs" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamedependencies" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>dependencies
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamedependenciesnamedev" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>dependencies.<wbr>&lt;name&gt;.<wbr>dev
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamedependenciesnameversion" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>dependencies.<wbr>&lt;name&gt;.<wbr>version
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamesource" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>source
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#pathscachefile" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>cacheFile
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#pathslockfile" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>lockFile
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#pathspackage" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>package
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#pathsprojectroot" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>projectRoot
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#pathsprojectrootfile" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>projectRootFile
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#public" class="md-nav__link">
+      <span class="md-ellipsis">
+        public
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#publicdocs" class="md-nav__link">
+      <span class="md-ellipsis">
+        public.<wbr>docs
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#version" class="md-nav__link">
+      <span class="md-ellipsis">
+        version
+      </span>
+    </a>
+    
+</li>
+          
+        </ul>
+      </nav>
+    
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../php-composer-lock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    php-composer-lock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../php-granular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    php-granular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Experimental Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Experimental Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIP-haskell-cabal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    haskell-cabal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIP-nodejs-builder-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-builder-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIP-python-pdm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python-pdm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIP-python-pyproject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python-pyproject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIP-spago/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spago
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust-cargo-lock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rust-cargo-lock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust-crane/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rust-crane
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Internal Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Internal Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WIP-groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -548,27 +1287,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../nodejs-granular-v3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    nodejs-granular-v3
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../nodejs-node-modules/" class="md-nav__link">
         
   
@@ -632,27 +1350,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../nodejs-package-json-v3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    nodejs-package-json-v3
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../nodejs-package-lock/" class="md-nav__link">
         
   
@@ -662,1077 +1359,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    nodejs-package-lock-v3
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    nodejs-package-lock-v3
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#introduction" class="md-nav__link">
-                <span class="md-ellipsis">Introduction</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-      
-        <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#options" class="md-nav__link">
-                <span class="md-ellipsis">Options</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="Options">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#nodejs-package-lock-v3" class="md-nav__link">
-                <span class="md-ellipsis">nodejs-package-lock-v3</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="nodejs-package-lock-v3">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#nodejs-package-lock-v3packagelockfile" class="md-nav__link">
-                <span class="md-ellipsis">packageLockFile</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#nodejs-package-lock-v3pdefs" class="md-nav__link">
-                <span class="md-ellipsis">pdefs</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="nodejs-package-lock-v3.pdefs">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#name" class="md-nav__link">
-                <span class="md-ellipsis">&lt;name&gt;</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="<name>">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#name_1" class="md-nav__link">
-                <span class="md-ellipsis">&lt;name&gt;</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#dependencies" class="md-nav__link">
-                <span class="md-ellipsis"># dependencies</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#nodejs-package-lock-v3pdefsnamenamesource" class="md-nav__link">
-                <span class="md-ellipsis">source</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#deps" class="md-nav__link">
-                <span class="md-ellipsis">deps</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#env" class="md-nav__link">
-                <span class="md-ellipsis">env</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#name_2" class="md-nav__link">
-                <span class="md-ellipsis">name</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#version" class="md-nav__link">
-                <span class="md-ellipsis">version</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#lock" class="md-nav__link">
-                <span class="md-ellipsis">lock</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="lock">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockextrascripts" class="md-nav__link">
-                <span class="md-ellipsis">extraScripts</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#lockfields" class="md-nav__link">
-                <span class="md-ellipsis">fields</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="lock.fields">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#name_3" class="md-nav__link">
-                <span class="md-ellipsis">&lt;name&gt;</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="<name>">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockfieldsnamescript" class="md-nav__link">
-                <span class="md-ellipsis">script</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockinvalidationdata" class="md-nav__link">
-                <span class="md-ellipsis">invalidationData</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lib" class="md-nav__link">
-                <span class="md-ellipsis">lib</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockrefresh" class="md-nav__link">
-                <span class="md-ellipsis">refresh</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#paths" class="md-nav__link">
-                <span class="md-ellipsis">paths</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="paths">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathslockfile" class="md-nav__link">
-                <span class="md-ellipsis">lockFile</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathspackage" class="md-nav__link">
-                <span class="md-ellipsis">package</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathsprojectroot" class="md-nav__link">
-                <span class="md-ellipsis">projectRoot</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathsprojectrootfile" class="md-nav__link">
-                <span class="md-ellipsis">projectRootFile</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#public" class="md-nav__link">
-                <span class="md-ellipsis">public</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="public">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#publicdocs" class="md-nav__link">
-                <span class="md-ellipsis">docs</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
-</li>
-                
-            </ul>
-        </nav>
-        
-        </details>
-</li>
-                
-            </ul>
-        </nav>
-        
-        
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1771,272 +1397,6 @@
   
   <span class="md-ellipsis">
     package-func
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../php-composer-lock/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    php-composer-lock
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../php-granular/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    php-granular
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pip/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pip
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rust-cargo-lock/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    rust-cargo-lock
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rust-crane/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    rust-crane
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_23" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_23" id="__nav_4_23_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Experimental Modules
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_23_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_23">
-            <span class="md-nav__icon md-icon"></span>
-            Experimental Modules
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../WIP-groups/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    groups
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../WIP-haskell-cabal/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    haskell-cabal
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../WIP-nodejs-builder-v3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    nodejs-builder-v3
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../WIP-python-pdm/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    python-pdm
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../WIP-python-pyproject/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    python-pyproject
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../WIP-spago/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    spago
   </span>
   
 
@@ -2124,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/repo-with-packages-flake)" class="md-nav__link">
+      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/repo-with-packages-flake" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2145,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/packages)" class="md-nav__link">
+      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/packages" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2761,1018 +2121,271 @@
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#introduction" class="md-nav__link">
-                <span class="md-ellipsis">Introduction</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+        <li class="md-nav__item">
+    <a href="#introduction" class="md-nav__link">
+      <span class="md-ellipsis">
+        Introduction
+      </span>
+    </a>
+    
 </li>
       
-        <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#options" class="md-nav__link">
-                <span class="md-ellipsis">Options</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="Options">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#nodejs-package-lock-v3" class="md-nav__link">
-                <span class="md-ellipsis">nodejs-package-lock-v3</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="nodejs-package-lock-v3">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#nodejs-package-lock-v3packagelockfile" class="md-nav__link">
-                <span class="md-ellipsis">packageLockFile</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+        <li class="md-nav__item">
+    <a href="#options" class="md-nav__link">
+      <span class="md-ellipsis">
+        Options
+      </span>
+    </a>
+    
+      <nav class="md-nav" aria-label="Options">
+        <ul class="md-nav__list">
+          
+            <li class="md-nav__item">
+    <a href="#deps" class="md-nav__link">
+      <span class="md-ellipsis">
+        deps
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#nodejs-package-lock-v3pdefs" class="md-nav__link">
-                <span class="md-ellipsis">pdefs</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="nodejs-package-lock-v3.pdefs">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#name" class="md-nav__link">
-                <span class="md-ellipsis">&lt;name&gt;</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="<name>">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#name_1" class="md-nav__link">
-                <span class="md-ellipsis">&lt;name&gt;</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#env" class="md-nav__link">
+      <span class="md-ellipsis">
+        env
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#dependencies" class="md-nav__link">
-                <span class="md-ellipsis"># dependencies</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#lockcontent" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>content
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#nodejs-package-lock-v3pdefsnamenamesource" class="md-nav__link">
-                <span class="md-ellipsis">source</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#lockextrascripts" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>extraScripts
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#lockfields" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>fields
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#lockfieldsnamedefault" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>fields.<wbr>&lt;name&gt;.<wbr>default
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#lockfieldsnamescript" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>fields.<wbr>&lt;name&gt;.<wbr>script
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#deps" class="md-nav__link">
-                <span class="md-ellipsis">deps</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#lockinvalidationdata" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>invalidationData
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#env" class="md-nav__link">
-                <span class="md-ellipsis">env</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#lockisvalid" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>isValid
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#name_2" class="md-nav__link">
-                <span class="md-ellipsis">name</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#locklibcomputefodhash" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>lib.<wbr>computeFODHash
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#version" class="md-nav__link">
-                <span class="md-ellipsis">version</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#lockrefresh" class="md-nav__link">
+      <span class="md-ellipsis">
+        lock.<wbr>refresh
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#lock" class="md-nav__link">
-                <span class="md-ellipsis">lock</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="lock">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockextrascripts" class="md-nav__link">
-                <span class="md-ellipsis">extraScripts</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#name" class="md-nav__link">
+      <span class="md-ellipsis">
+        name
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#lockfields" class="md-nav__link">
-                <span class="md-ellipsis">fields</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="lock.fields">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#name_3" class="md-nav__link">
-                <span class="md-ellipsis">&lt;name&gt;</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="<name>">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockfieldsnamescript" class="md-nav__link">
-                <span class="md-ellipsis">script</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3packagelock" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>packageLock
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3packagelockfile" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>packageLockFile
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefs" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockinvalidationdata" class="md-nav__link">
-                <span class="md-ellipsis">invalidationData</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamedependencies" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>dependencies
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lib" class="md-nav__link">
-                <span class="md-ellipsis">lib</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamedependenciesnamedev" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>dependencies.<wbr>&lt;name&gt;.<wbr>dev
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#lockrefresh" class="md-nav__link">
-                <span class="md-ellipsis">refresh</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamedependenciesnameversion" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>dependencies.<wbr>&lt;name&gt;.<wbr>version
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#nodejs-package-lock-v3pdefsnamenamesource" class="md-nav__link">
+      <span class="md-ellipsis">
+        nodejs-package-lock-v3.<wbr>pdefs.<wbr>&lt;name&gt;.<wbr>&lt;name&gt;.<wbr>source
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#paths" class="md-nav__link">
-                <span class="md-ellipsis">paths</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="paths">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathslockfile" class="md-nav__link">
-                <span class="md-ellipsis">lockFile</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#pathscachefile" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>cacheFile
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathspackage" class="md-nav__link">
-                <span class="md-ellipsis">package</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#pathslockfile" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>lockFile
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathsprojectroot" class="md-nav__link">
-                <span class="md-ellipsis">projectRoot</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#pathspackage" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>package
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#pathsprojectrootfile" class="md-nav__link">
-                <span class="md-ellipsis">projectRootFile</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#pathsprojectroot" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>projectRoot
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#pathsprojectrootfile" class="md-nav__link">
+      <span class="md-ellipsis">
+        paths.<wbr>projectRootFile
+      </span>
+    </a>
+    
 </li>
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item"><details>
-        <summary>
-            <a href="#public" class="md-nav__link">
-                <span class="md-ellipsis">public</span>
-            </a>
-         </summary>
-
-        <!-- Table of contents list -->
-        
-        <nav class="md-nav" aria-label="public">
-            <ul class="md-nav__list">
-                
-                <!--
-     Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to
-     deal in the Software without restriction, including without limitation the
-     rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-     sell copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-     IN THE SOFTWARE.
--->
-
-<!-- Table of contents item -->
-<li class="md-nav__item">
-            <a href="#publicdocs" class="md-nav__link">
-                <span class="md-ellipsis">docs</span>
-            </a>
-         
-
-        <!-- Table of contents list -->
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#public" class="md-nav__link">
+      <span class="md-ellipsis">
+        public
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        </details>
+          
+            <li class="md-nav__item">
+    <a href="#publicdocs" class="md-nav__link">
+      <span class="md-ellipsis">
+        public.<wbr>docs
+      </span>
+    </a>
+    
 </li>
-                
-            </ul>
-        </nav>
-        
-        
+          
+            <li class="md-nav__item">
+    <a href="#version" class="md-nav__link">
+      <span class="md-ellipsis">
+        version
+      </span>
+    </a>
+    
+</li>
+          
+        </ul>
+      </nav>
+    
 </li>
       
     </ul>
@@ -3810,45 +2423,7 @@
 
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<h3 id="nodejs-package-lock-v3">nodejs-package-lock-v3<a class="headerlink" href="#nodejs-package-lock-v3" title="Permanent link">&para;</a></h3>
-<h4 id="nodejs-package-lock-v3packagelockfile">nodejs-package-lock-v3.packageLockFile<a class="headerlink" href="#nodejs-package-lock-v3packagelockfile" title="Permanent link">&para;</a></h4>
-<p>The package-lock.json file to use.</p>
-<table>
-    <tr>
-        <td>type</td>
-        <td>null or path </td>
-    </tr>
-    <tr>
-        <td>source</td>
-        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
-    </tr></table>
-
-<h4 id="nodejs-package-lock-v3pdefs">nodejs-package-lock-v3.pdefs<a class="headerlink" href="#nodejs-package-lock-v3pdefs" title="Permanent link">&para;</a></h4>
-<table>
-    <tr>
-        <td>type</td>
-        <td>attribute set of attribute set of (submodule) </td>
-    </tr>
-    <tr>
-        <td>source</td>
-        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
-    </tr></table>
-
-<h5 id="name">&lt;name&gt;<a class="headerlink" href="#name" title="Permanent link">&para;</a></h5>
-<h6 id="name_1">&lt;name&gt;<a class="headerlink" href="#name_1" title="Permanent link">&para;</a></h6>
-<h6 id="dependencies"># dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h6>
-<h6 id="nodejs-package-lock-v3pdefsnamenamesource"># nodejs-package-lock-v3.pdefs.&lt;name&gt;.&lt;name&gt;.source<a class="headerlink" href="#nodejs-package-lock-v3pdefsnamenamesource" title="Permanent link">&para;</a></h6>
-<table>
-    <tr>
-        <td>type</td>
-        <td>string or path or package or (submodule) </td>
-    </tr>
-    <tr>
-        <td>source</td>
-        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
-    </tr></table>
-
-<h3 id="deps">deps<a class="headerlink" href="#deps" title="Permanent link">&para;</a></h3>
+<h4 id="deps">deps<a class="headerlink" href="#deps" title="Permanent link">&para;</a></h4>
 <p>All dependencies of the package. This option should be set by the "outer world" and can be used to inherit attributes from <code>pkgs</code> or <code>inputs</code> etc.</p>
 <p>By separating the task of retrieving things from the outside world, it is ensured that the dependencies are overridable.
 Nothing will stop users from adding <code>nixpkgs</code> itself as a dependency, but this will make it very hard for the user of the package to override any dependencies, because they'd have to figure out a way to insert their changes into the Nixpkgs fixpoint. By adding specific attributes to <code>deps</code> instead, the user has a realistic chance of overriding those dependencies.</p>
@@ -3878,7 +2453,7 @@ Nothing will stop users from adding <code>nixpkgs</code> itself as a dependency,
         </td>
     </tr></table>
 
-<h3 id="env">env<a class="headerlink" href="#env" title="Permanent link">&para;</a></h3>
+<h4 id="env">env<a class="headerlink" href="#env" title="Permanent link">&para;</a></h4>
 <p>environment variables passed to the build environment</p>
 <table>
     <tr>
@@ -3895,31 +2470,19 @@ Nothing will stop users from adding <code>nixpkgs</code> itself as a dependency,
 </td>
     </tr></table>
 
-<h3 id="name_2">name<a class="headerlink" href="#name_2" title="Permanent link">&para;</a></h3>
-<p>The name of the package</p>
+<h4 id="lockcontent">lock.content<a class="headerlink" href="#lockcontent" title="Permanent link">&para;</a></h4>
+<p>The content of the lock file.
+All fields declared via <code>lock.fields</code> are contained pointing to their respective values.</p>
 <table>
     <tr>
         <td>type</td>
-        <td>string </td>
+        <td>anything </td>
     </tr>
     <tr>
         <td>source</td>
-        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/ui/interface.nix">dream2nix/modules/dream2nix/core/ui/interface.nix</a></td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/lock/interface.nix">dream2nix/modules/dream2nix/core/lock/interface.nix</a></td>
     </tr></table>
 
-<h3 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
-<p>The version of the package</p>
-<table>
-    <tr>
-        <td>type</td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <td>source</td>
-        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/ui/interface.nix">dream2nix/modules/dream2nix/core/ui/interface.nix</a></td>
-    </tr></table>
-
-<h3 id="lock">lock<a class="headerlink" href="#lock" title="Permanent link">&para;</a></h3>
 <h4 id="lockextrascripts">lock.extraScripts<a class="headerlink" href="#lockextrascripts" title="Permanent link">&para;</a></h4>
 <p>Extra shell scripts to execute when <code>nix run .#{package}.lock</code> is called.</p>
 <p>This allows adding custom logic to the lock file generation.</p>
@@ -3965,8 +2528,24 @@ Nothing will stop users from adding <code>nixpkgs</code> itself as a dependency,
         </td>
     </tr></table>
 
-<h5 id="name_3">&lt;name&gt;<a class="headerlink" href="#name_3" title="Permanent link">&para;</a></h5>
-<h6 id="lockfieldsnamescript">lock.fields.&lt;name&gt;.script<a class="headerlink" href="#lockfieldsnamescript" title="Permanent link">&para;</a></h6>
+<h4 id="lockfieldsnamedefault">lock.fields.&lt;name&gt;.default<a class="headerlink" href="#lockfieldsnamedefault" title="Permanent link">&para;</a></h4>
+<p>The default value in case the lock file doesn't exist or doesn't yet contain the field.</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>null or anything </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/lock/interface.nix">dream2nix/modules/dream2nix/core/lock/interface.nix</a></td>
+    </tr><tr>
+        <td>default</td>
+        <td><div class="highlight"><pre><span></span><span class="no">null</span>
+</pre></div>
+</td>
+    </tr></table>
+
+<h4 id="lockfieldsnamescript">lock.fields.&lt;name&gt;.script<a class="headerlink" href="#lockfieldsnamescript" title="Permanent link">&para;</a></h4>
 <p>A script to refresh the value of this lock file field.
 The script should write the result as json file to $out.</p>
 <table>
@@ -4013,7 +2592,30 @@ when the requirements change.</p>
         </td>
     </tr></table>
 
-<h4 id="lib">lib<a class="headerlink" href="#lib" title="Permanent link">&para;</a></h4>
+<h4 id="lockisvalid">lock.isValid<a class="headerlink" href="#lockisvalid" title="Permanent link">&para;</a></h4>
+<p>Check whether the current lock file is valid, which means we don't need to lock again.</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>boolean (read only)</td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/lock/interface.nix">dream2nix/modules/dream2nix/core/lock/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="locklibcomputefodhash">lock.lib.computeFODHash<a class="headerlink" href="#locklibcomputefodhash" title="Permanent link">&para;</a></h4>
+<p>Helper function to write the hash of a given FOD to $out.</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>function that evaluates to a(n) path (read only)</td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/lock/interface.nix">dream2nix/modules/dream2nix/core/lock/interface.nix</a></td>
+    </tr></table>
+
 <h4 id="lockrefresh">lock.refresh<a class="headerlink" href="#lockrefresh" title="Permanent link">&para;</a></h4>
 <p>Script to refresh the lock file</p>
 <table>
@@ -4026,7 +2628,115 @@ when the requirements change.</p>
         <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/lock/interface.nix">dream2nix/modules/dream2nix/core/lock/interface.nix</a></td>
     </tr></table>
 
-<h3 id="paths">paths<a class="headerlink" href="#paths" title="Permanent link">&para;</a></h3>
+<h4 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<p>The name of the package</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/ui/interface.nix">dream2nix/modules/dream2nix/core/ui/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3packagelock">nodejs-package-lock-v3.packageLock<a class="headerlink" href="#nodejs-package-lock-v3packagelock" title="Permanent link">&para;</a></h4>
+<p>The content of the package-lock.json</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>attribute set </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3packagelockfile">nodejs-package-lock-v3.packageLockFile<a class="headerlink" href="#nodejs-package-lock-v3packagelockfile" title="Permanent link">&para;</a></h4>
+<p>The package-lock.json file to use.</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>null or path </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3pdefs">nodejs-package-lock-v3.pdefs<a class="headerlink" href="#nodejs-package-lock-v3pdefs" title="Permanent link">&para;</a></h4>
+<table>
+    <tr>
+        <td>type</td>
+        <td>attribute set of attribute set of (submodule) </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3pdefsnamenamedependencies">nodejs-package-lock-v3.pdefs.&lt;name&gt;.&lt;name&gt;.dependencies<a class="headerlink" href="#nodejs-package-lock-v3pdefsnamenamedependencies" title="Permanent link">&para;</a></h4>
+<table>
+    <tr>
+        <td>type</td>
+        <td>attribute set of (submodule) </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3pdefsnamenamedependenciesnamedev">nodejs-package-lock-v3.pdefs.&lt;name&gt;.&lt;name&gt;.dependencies.&lt;name&gt;.dev<a class="headerlink" href="#nodejs-package-lock-v3pdefsnamenamedependenciesnamedev" title="Permanent link">&para;</a></h4>
+<table>
+    <tr>
+        <td>type</td>
+        <td>boolean </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3pdefsnamenamedependenciesnameversion">nodejs-package-lock-v3.pdefs.&lt;name&gt;.&lt;name&gt;.dependencies.&lt;name&gt;.version<a class="headerlink" href="#nodejs-package-lock-v3pdefsnamenamedependenciesnameversion" title="Permanent link">&para;</a></h4>
+<table>
+    <tr>
+        <td>type</td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="nodejs-package-lock-v3pdefsnamenamesource">nodejs-package-lock-v3.pdefs.&lt;name&gt;.&lt;name&gt;.source<a class="headerlink" href="#nodejs-package-lock-v3pdefsnamenamesource" title="Permanent link">&para;</a></h4>
+<table>
+    <tr>
+        <td>type</td>
+        <td>string or path or package or (submodule) </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/nodejs-package-lock-v3/interface.nix">dream2nix/modules/dream2nix/nodejs-package-lock-v3/interface.nix</a></td>
+    </tr></table>
+
+<h4 id="pathscachefile">paths.cacheFile<a class="headerlink" href="#pathscachefile" title="Permanent link">&para;</a></h4>
+<p>Path to the eval cache file of the current package.
+Relative to "${paths.projectRoot}/${paths.package}"".</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/paths/interface.nix">dream2nix/modules/dream2nix/core/paths/interface.nix</a></td>
+    </tr><tr>
+        <td>default</td>
+        <td><div class="highlight"><pre><span></span><span class="s2">&quot;cache.json&quot;</span>
+</pre></div>
+</td>
+    </tr></table>
+
 <h4 id="pathslockfile">paths.lockFile<a class="headerlink" href="#pathslockfile" title="Permanent link">&para;</a></h4>
 <p>Path to the lock file of the current package.
 Relative to "${paths.projectRoot}/${paths.package}"".</p>
@@ -4106,7 +2816,7 @@ Ensure 'paths.projectRoot' contains a file named like this.</p>
         </td>
     </tr></table>
 
-<h3 id="public">public<a class="headerlink" href="#public" title="Permanent link">&para;</a></h3>
+<h4 id="public">public<a class="headerlink" href="#public" title="Permanent link">&para;</a></h4>
 <p>The final result of the evaluated package.
 Contains everything that nix expects from a derivation.
 Contains fields like name, outputs, drvPath, outPath, etc.
@@ -4131,6 +2841,18 @@ Can be build with nix-build or <code>nix build</code>.</p>
     <tr>
         <td>source</td>
         <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/docs">dream2nix/modules/dream2nix/core/docs</a></td>
+    </tr></table>
+
+<h4 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h4>
+<p>The version of the package</p>
+<table>
+    <tr>
+        <td>type</td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td><a href="https://github.com/nix-community/dream2nix/blob/master/modules/dream2nix/core/ui/interface.nix">dream2nix/modules/dream2nix/core/ui/interface.nix</a></td>
     </tr></table>
 
 

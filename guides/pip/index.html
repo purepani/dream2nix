@@ -1,0 +1,2460 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dream2nix.dev/guides/pip/">
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../../modules/">
+      
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>Build a python project with pip - Dream2Nix</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#start-with-a-flake" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dream2Nix" class="md-header__button md-logo" aria-label="Dream2Nix" data-md-component="logo">
+      
+  <img src="../../favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dream2Nix
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Build a python project with pip
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nix-community/dream2nix" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nix-community/dream2nix
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dream2Nix" class="md-nav__button md-logo" aria-label="Dream2Nix" data-md-component="logo">
+      
+  <img src="../../favicon.png" alt="logo">
+
+    </a>
+    Dream2Nix
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nix-community/dream2nix" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nix-community/dream2nix
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python & pip
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python & pip
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#start-with-a-flake" class="md-nav__link">
+      <span class="md-ellipsis">
+        Start with a flake
+      </span>
+    </a>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#example-pillow" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example: Pillow
+      </span>
+    </a>
+    
+      <nav class="md-nav" aria-label="Example: Pillow">
+        <ul class="md-nav__list">
+          
+            <li class="md-nav__item">
+    <a href="#code" class="md-nav__link">
+      <span class="md-ellipsis">
+        Code
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#initialise-the-repostory" class="md-nav__link">
+      <span class="md-ellipsis">
+        Initialise the repostory
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#create-a-lock-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        Create a lock file
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#build-it" class="md-nav__link">
+      <span class="md-ellipsis">
+        Build it
+      </span>
+    </a>
+    
+</li>
+          
+        </ul>
+      </nav>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#example-my-tool" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example: my-tool
+      </span>
+    </a>
+    
+      <nav class="md-nav" aria-label="Example: my-tool">
+        <ul class="md-nav__list">
+          
+            <li class="md-nav__item">
+    <a href="#code_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Code
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#build-it_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Build it
+      </span>
+    </a>
+    
+</li>
+          
+        </ul>
+      </nav>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#development-shells" class="md-nav__link">
+      <span class="md-ellipsis">
+        Development Shells
+      </span>
+    </a>
+    
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overrides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overriding Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-granular-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-granular-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-package-json-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-package-json-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-package-lock-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-package-lock-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/php-composer-lock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    php-composer-lock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/php-granular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    php-granular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Experimental Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Experimental Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/WIP-haskell-cabal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    haskell-cabal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/WIP-nodejs-builder-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-builder-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/WIP-python-pdm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python-pdm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/WIP-python-pyproject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python-pyproject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/WIP-spago/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spago
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rust-cargo-lock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rust-cargo-lock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rust-crane/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rust-crane
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Internal Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Internal Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/WIP-groups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/buildPythonPackage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    buildPythonPackage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/buildRustPackage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    buildRustPackage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/builtins-derivation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    builtins-derivation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/mkDerivation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkDerivation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/multi-derivation-package/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    multi-derivation-package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-devshell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-devshell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-devshell-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-devshell-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-granular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-granular
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-node-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-node-modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-node-modules-v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-node-modules-v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-package-json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-package-json
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodejs-package-lock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nodejs-package-lock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/overrides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    overrides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/package-func/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    package-func
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/repo-with-packages" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👉 example repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/repo-with-packages-flake" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👉 example repository using flakes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/nix-community/dream2nix/tree/main/examples/packages" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👉 example packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    v1 API design docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            v1 API design docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dream2nix v1 API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problems of the current dream2nix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/users/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The users of dream2nix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_4" id="__nav_7_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Consuming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Consuming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/consuming/inspect-options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inspect the API of a package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/consuming/override/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consume and modify dream2nix packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_5" id="__nav_7_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/integrating/integrate-lang2nix-impure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrate lang2nix tool (impure/code-gen)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/integrating/integrate-lang2nix-pure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrate lang2nix tool (pure)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_6" id="__nav_7_1_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Packaging
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            Packaging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/packaging/monorepo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    build packages in a monorepo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/packaging/nodejs-init-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    initialize nodejs project + dev shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/packaging/nodejs-multiple-repos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    handle multiple repos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1-api/packaging/nodejs-workspaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    build + develop on nodejs workspaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development roundups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Development roundups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-roundups/2022-april-june/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Roundup April - June 2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-roundups/2022-april-problems-of-nixos-module-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thoughts on the current nixos module system
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-roundups/2022-july-september/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Roundup July - September 2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#start-with-a-flake" class="md-nav__link">
+      <span class="md-ellipsis">
+        Start with a flake
+      </span>
+    </a>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#example-pillow" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example: Pillow
+      </span>
+    </a>
+    
+      <nav class="md-nav" aria-label="Example: Pillow">
+        <ul class="md-nav__list">
+          
+            <li class="md-nav__item">
+    <a href="#code" class="md-nav__link">
+      <span class="md-ellipsis">
+        Code
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#initialise-the-repostory" class="md-nav__link">
+      <span class="md-ellipsis">
+        Initialise the repostory
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#create-a-lock-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        Create a lock file
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#build-it" class="md-nav__link">
+      <span class="md-ellipsis">
+        Build it
+      </span>
+    </a>
+    
+</li>
+          
+        </ul>
+      </nav>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#example-my-tool" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example: my-tool
+      </span>
+    </a>
+    
+      <nav class="md-nav" aria-label="Example: my-tool">
+        <ul class="md-nav__list">
+          
+            <li class="md-nav__item">
+    <a href="#code_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Code
+      </span>
+    </a>
+    
+</li>
+          
+            <li class="md-nav__item">
+    <a href="#build-it_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Build it
+      </span>
+    </a>
+    
+</li>
+          
+        </ul>
+      </nav>
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#development-shells" class="md-nav__link">
+      <span class="md-ellipsis">
+        Development Shells
+      </span>
+    </a>
+    
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>We recommend reading our <a href="../getting-started/">Getting Started</a> guide first if you have not done so yet!</p>
+</div>
+<p>In this guide we are going to take a look at two annotated examples using the <a href="../../reference/pip/">pip module</a>:</p>
+<ul>
+<li>The first one builds <a href="https://python-pillow.org/">Pillow</a> from upstream sources fetched from PyPi.</li>
+<li>The second one builds a fictional python project living in the same repository as the nix sources
+  and a development environment around it.</li>
+</ul>
+<h2 id="start-with-a-flake">Start with a flake<a class="headerlink" href="#start-with-a-flake" title="Permanent link">&para;</a></h2>
+<p>We start both examples by creating a new git repository and adding almost the same <code>flake.nix</code> template we already used in <a href="../getting-started/#start-a-project">Getting Started</a>. The only difference
+are the packages name, <code>default</code> instead of <code>hello</code>:</p>
+<div class="highlight"><span class="filename">flake.nix</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="ss">inputs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    dream2nix<span class="o">.</span><span class="ss">url</span> <span class="o">=</span> <span class="s2">&quot;github:nix-community/dream2nix&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    nixpkgs<span class="o">.</span><span class="ss">follows</span> <span class="o">=</span> <span class="s2">&quot;dream2nix/nixpkgs&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">};</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="ss">outputs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    self<span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    dream2nix<span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    nixpkgs<span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  <span class="p">}:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  <span class="k">let</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>      <span class="ss">eachSystem</span> <span class="o">=</span> nixpkgs<span class="o">.</span>lib<span class="o">.</span>genAttrs <span class="p">[</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>      <span class="s2">&quot;aarch64-darwin&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>      <span class="s2">&quot;aarch64-linux&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      <span class="s2">&quot;x86_64-darwin&quot;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>      <span class="s2">&quot;x86_64-linux&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="p">];</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  <span class="k">in</span> <span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  <span class="ss">packages</span> <span class="o">=</span> eachSystem <span class="p">(</span>system<span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="ss">default</span> <span class="o">=</span> dream2nix<span class="o">.</span>lib<span class="o">.</span>evalModules <span class="p">{</span> <span class="c1"># (1)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>      packageSets<span class="o">.</span><span class="ss">nixpkgs</span> <span class="o">=</span> nixpkgs<span class="o">.</span>legacyPackages<span class="o">.</span><span class="si">${</span>system<span class="si">}</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      <span class="ss">modules</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="l">./default.nix</span> <span class="c1"># (2)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="p">{</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>          paths<span class="o">.</span><span class="ss">projectRoot</span> <span class="o">=</span> <span class="l">./.</span><span class="p">;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>          paths<span class="o">.</span><span class="ss">projectRootFile</span> <span class="o">=</span> <span class="s2">&quot;flake.nix&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>          paths<span class="o">.</span><span class="ss">package</span> <span class="o">=</span> <span class="l">./.</span><span class="p">;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="p">}</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>      <span class="p">];</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="p">};</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>  <span class="p">});</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>We call our package attribute <code>default</code> here...</li>
+<li>...and the nix file <code>default.nix</code> here.</li>
+</ol>
+<h2 id="example-pillow">Example: Pillow<a class="headerlink" href="#example-pillow" title="Permanent link">&para;</a></h2>
+<p>Things get a bit more interesting in <code>default.nix</code> where we define a package module which fetches Pillow from pypi and builds it with minimal features - just JPEG support. Click the plus to expand any code annotation below for details.
+The code we are going to end up with is also available in <a href="https://github.com/nix-community/dream2nix/tree/main/examples/packages/languages/python-packaging-pillow">./examples/packages/languages/python-packaging-pillow</a>.</p>
+<h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">default.nix</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  config<span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  lib<span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  dream2nix<span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="o">...</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}:</span> <span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="ss">imports</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    dream2nix<span class="o">.</span>modules<span class="o">.</span>dream2nix<span class="o">.</span>pip <span class="c1"># (1)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  <span class="p">];</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  <span class="ss">deps</span> <span class="o">=</span> <span class="p">{</span>nixpkgs<span class="p">,</span> <span class="o">...</span><span class="p">}:</span> <span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="ss">python</span> <span class="o">=</span> nixpkgs<span class="o">.</span>python3<span class="p">;</span> <span class="c1"># (2)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">inherit</span> <span class="c1"># (3)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>      <span class="p">(</span>nixpkgs<span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>      pkg-config
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      zlib
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>      libjpeg
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>      <span class="p">;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  <span class="p">};</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  <span class="ss">name</span> <span class="o">=</span> <span class="s2">&quot;pillow&quot;</span><span class="p">;</span> <span class="c1"># (4)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  <span class="ss">version</span> <span class="o">=</span> <span class="s2">&quot;10.4.0&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>  <span class="ss">mkDerivation</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># (5)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="ss">nativeBuildInputs</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>      config<span class="o">.</span>deps<span class="o">.</span>pkg-config
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="p">];</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    <span class="ss">propagatedBuildInputs</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>      config<span class="o">.</span>deps<span class="o">.</span>zlib
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>      config<span class="o">.</span>deps<span class="o">.</span>libjpeg
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="p">];</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>  <span class="p">};</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>  <span class="ss">buildPythonPackage</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># (6)</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="ss">pythonImportsCheck</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>      <span class="s2">&quot;PIL&quot;</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="p">];</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>  <span class="p">};</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>  <span class="ss">pip</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    <span class="ss">requirementsList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">${</span>config<span class="o">.</span>name<span class="si">}</span><span class="s2">==</span><span class="si">${</span>config<span class="o">.</span>version<span class="si">}</span><span class="s2">&quot;</span><span class="p">];</span> <span class="c1"># (7)</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="ss">pipFlags</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># (8)</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>      <span class="s2">&quot;--no-binary&quot;</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>      <span class="s2">&quot;:all:&quot;</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    <span class="p">];</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>  <span class="p">};</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Import the dream2nix <a href="../../reference/pip/">pip module</a> into our module.</li>
+<li>Declare external dependencies, like the python interpreter to use and libraries from nixpkgs. We use whatever the latest <code>python3</code> in nixpkgs is as our python.</li>
+<li>Declare which build tools we need to pull from nixpkgs for use in <code>mkDerivation</code> below.</li>
+<li>Declare name and version of our package. Those will also be used for <code>pip.requirementsList</code> below.</li>
+<li>Set dependencies, <code>pkg-config</code> is only required
+during build-time, while the libraries should be propagated. We use <code>config.deps</code> instead of a conventional <code>pkg</code> here to be able to "override" inputs via the <a href="../../modules/">module system</a>.</li>
+<li>Tell the <a href="../../reference/buildPythonPackage/">buildPythonPackage module</a> to verify that it can import the given python module from our package after a build.</li>
+<li>Tell the <a href="../../reference/pip/">pip module</a> which dependencies to lock using the same syntax as 
+a <code>requirements.txt</code> file. Here: <code>pillow==10.4.0</code>.</li>
+<li><code>pip</code> uses binary wheel files if available by default. We will not do so in order to ensure a build from source.</li>
+</ol>
+<h3 id="initialise-the-repostory">Initialise the repostory<a class="headerlink" href="#initialise-the-repostory" title="Permanent link">&para;</a></h3>
+<p>If you use <code>git</code>, you need to add <code>flake.nix</code> and <code>default.nix</code> to your git index so that they get copied to the <code>/nix/store</code> and the commands below see them:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>git<span class="w"> </span>init
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>flake.nix<span class="w"> </span>default.nix
+</code></pre></div>
+<h3 id="create-a-lock-file">Create a lock file<a class="headerlink" href="#create-a-lock-file" title="Permanent link">&para;</a></h3>
+<p>The next step is to create a lock file by running the packages <code>lock</code> attribute. This does a <code>pip install --dry-run</code> under the hood and pins the exact packages pip would install.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>nix<span class="w"> </span>run<span class="w"> </span>.#default.lock
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>lock.json
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to limitations in <code>pip</code>s cross-platform support, the resulting
+lock-files are platform-specific!
+We therefore recommend setting <code>paths.lockFile</code> to <code>lock.${system}.json</code>
+for all projects where you use the pip module.</p>
+<p>Check out the <a href="../../reference/WIP-python-pdm/">pdm module</a> if you need a solution that
+allows locking for multiple platforms at once!</p>
+</div>
+<h3 id="build-it">Build it<a class="headerlink" href="#build-it" title="Permanent link">&para;</a></h3>
+<p>After that's done, we can finally build it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>nix<span class="w"> </span>build<span class="w"> </span>.#default
+</code></pre></div>
+<p>Congratulations, you just built your first python package with dream2nix! The resulting package can be used with any other nix python package as long as it uses the same version of python.</p>
+<h2 id="example-my-tool">Example: my-tool<a class="headerlink" href="#example-my-tool" title="Permanent link">&para;</a></h2>
+<p>In our second example, we package are going to package a simple, fictional python package called <code>my_tool</code>. Its code and nix expressions
+are stored in the same repository. For reference, they are  available in full in <a href="https://github.com/nix-community/dream2nix/tree/main/examples/packages/languages/python-local-development">./examples/packages/languages/python-local-development</a>.</p>
+<h3 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">default.nix</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  config<span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  lib<span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  dream2nix<span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  <span class="o">...</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}:</span> <span class="k">let</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  <span class="ss">pyproject</span> <span class="o">=</span> lib<span class="o">.</span>importTOML <span class="p">(</span>config<span class="o">.</span>mkDerivation<span class="o">.</span>src <span class="o">+</span> <span class="l">/pyproject.toml</span><span class="p">);</span> <span class="c1"># (1)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">in</span> <span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  <span class="ss">imports</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    dream2nix<span class="o">.</span>modules<span class="o">.</span>dream2nix<span class="o">.</span>pip <span class="c1"># (2)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  <span class="p">];</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>  <span class="ss">deps</span> <span class="o">=</span> <span class="p">{</span>nixpkgs<span class="p">,</span> <span class="o">...</span><span class="p">}:</span> <span class="p">{</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="ss">python</span> <span class="o">=</span> nixpkgs<span class="o">.</span>python3<span class="p">;</span> <span class="c1"># (3)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>  <span class="p">};</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>  <span class="k">inherit</span> <span class="p">(</span>pyproject<span class="o">.</span>project<span class="p">)</span> name version<span class="p">;</span> <span class="c1"># (4)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>  <span class="ss">mkDerivation</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="ss">src</span> <span class="o">=</span> lib<span class="o">.</span>cleanSourceWith <span class="p">{</span> <span class="c1"># (5)</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>      <span class="ss">src</span> <span class="o">=</span> lib<span class="o">.</span>cleanSource <span class="l">./.</span><span class="p">;</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>      <span class="ss">filter</span> <span class="o">=</span> name<span class="p">:</span> type<span class="p">:</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="o">!</span><span class="p">(</span><span class="nb">builtins</span><span class="o">.</span>any <span class="p">(</span>x<span class="p">:</span> x<span class="p">)</span> <span class="p">[</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>          <span class="p">(</span>lib<span class="o">.</span>hasSuffix <span class="s2">&quot;.nix&quot;</span> name<span class="p">)</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>          <span class="p">(</span>lib<span class="o">.</span>hasPrefix <span class="s2">&quot;.&quot;</span> <span class="p">(</span><span class="nb">builtins</span><span class="o">.</span><span class="nb">baseNameOf</span> name<span class="p">))</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>          <span class="p">(</span>lib<span class="o">.</span>hasSuffix <span class="s2">&quot;flake.lock&quot;</span> name<span class="p">)</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>        <span class="p">]);</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    <span class="p">};</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>  <span class="p">};</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>  <span class="ss">buildPythonPackage</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    <span class="ss">pyproject</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>  <span class="c1"># (6)</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>    <span class="ss">pythonImportsCheck</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># (7)</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>      <span class="s2">&quot;my_tool&quot;</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>    <span class="p">];</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>  <span class="p">};</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>  <span class="ss">pip</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>    <span class="c1"># (8)</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>    <span class="ss">requirementsList</span> <span class="o">=</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>      pyproject<span class="o">.</span>build-system<span class="o">.</span>requires <span class="ow">or</span> <span class="p">[]</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>      <span class="o">++</span> pyproject<span class="o">.</span>project<span class="o">.</span>dependencies <span class="ow">or</span> <span class="p">[];</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>    <span class="ss">flattenDependencies</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> <span class="c1"># (9)</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>    overrides<span class="o">.</span><span class="ss">click</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># (10)</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>      buildPythonPackage<span class="o">.</span><span class="ss">pyproject</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>      mkDerivation<span class="o">.</span><span class="ss">nativeBuildInputs</span> <span class="o">=</span> <span class="p">[</span>config<span class="o">.</span>deps<span class="o">.</span>python<span class="o">.</span>pkgs<span class="o">.</span>flit-core<span class="p">];</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>    <span class="p">};</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>  <span class="p">};</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Load <code>pyproject.toml</code> from our source directory, which is the filtered
+source defined in <code>mkDerivation.src</code> below.</li>
+<li>Import the dream2nix <a href="../../reference/pip/">pip module</a> into our module</li>
+<li>Define external, non-python dependencies. We use whatever the latest <code>python3</code> in nixpkgs is as our python.</li>
+<li>Get our projects <code>name</code> and <code>version</code> straight from <code>pyproject.toml</code>. You could of course also hard-code them here if e.g. your project still uses <code>setup.py</code>.</li>
+<li>Define the source for our project. Here we take the current directory, but filter out <code>*.nix</code> files, hidden files and <code>flake.lock</code> before copying to <code>/nix/store</code> in order to avoid unecessary rebuilds.</li>
+<li>Tell the dream2nix <a href="../../reference/buildPythonPackage/">buildPythonPackage module</a>, imported by the pip module to use pyproject-specific hooks here.
+Don't set it if your project doesn't include a <code>pyproject.toml</code> or your are using a wheel.</li>
+<li>Tell the <a href="../../reference/buildPythonPackage/">buildPythonPackage module</a> to verify that it can import the given python module from our package after a build.</li>
+<li>Declare a list of requirements for <code>pip</code> to lock by concatenating
+both the build-systems and normal dependencies in <code>pyproject.toml</code>.</li>
+<li>By default, the <a href="../../reference/pip/">pip module</a> assumes that it finds the top-level package inside the lock file. This isn't the case
+here as the top-level package comes from the local repository. So we
+instruct the module to just install all requirements into a flat environment.</li>
+<li>Declare overrides for package attributes that can't be detected heuristically by dream2nix yet. Here: use pyproject-hooks for click and
+add <code>poetry-core</code> to its build-time dependencies.</li>
+</ol>
+<h3 id="build-it_1">Build it<a class="headerlink" href="#build-it_1" title="Permanent link">&para;</a></h3>
+<p>Just as in the same example, we need to lock our python dependencies and add the lock file before we build our package:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>git<span class="w"> </span>init
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>flake.nix<span class="w"> </span>default.nix
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="gp">$ </span>nix<span class="w"> </span>run<span class="w"> </span>.#default.lock
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">[...]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">lock file written to [...]/lock.x86_64-linux.json</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="go">Add this file to git if flakes is used.</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>lock.json
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="gp">$ </span>nix<span class="w"> </span>build<span class="w"> </span>.#
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="gp">$ </span>./result/bin/my_tool
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="go">Hello world!</span>
+</code></pre></div>
+<h1 id="development-shells">Development Shells<a class="headerlink" href="#development-shells" title="Permanent link">&para;</a></h1>
+<p>Now that we got <code>my_tool</code> built, let's try out a <em>devShell</em> for it. A shell environment, containing an <a href="#editable-installs">editable install</a> of our
+package , all its dependencies and scripts as well as other tools that are useful during development, but shouldn't end up in shipped packages.</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>If you use a <em>flat layout</em>, i.e. your python module is in the top-level of your repo you
+might discover that you can just import it if you start a python process there.
+This works because python searches the current directory for modules, but it will miss its
+dependencies and scripts declared in <code>pyproject.toml</code> won't be on the path.</p>
+</div>
+<p>To get started, add the following definition to your <code>flake.nix</code> (it's the same as in the <a href="https://github.com/nix-community/dream2nix/blob/main/examples/packages/languages/python-local-development/flake.nix">example</a>, so we omit some sections marked with <code>[...]</code>). Click on the pluses to expand annotations in the code below:</p>
+<div class="highlight"><span class="filename">flake.nix</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="c1"># [...]</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  <span class="ss">outputs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    self<span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    dream2nix<span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    nixpkgs<span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  <span class="p">}:</span> <span class="p">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  <span class="c1"># [...]</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  <span class="ss">devShells</span> <span class="o">=</span> eachSystem <span class="p">(</span>system<span class="p">:</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="k">let</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>      <span class="ss">pkgs</span> <span class="o">=</span> nixpkgs<span class="o">.</span>legacyPackages<span class="o">.</span><span class="si">${</span>system<span class="si">}</span><span class="p">;</span> <span class="c1"># (1)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>      <span class="ss">my_tool</span> <span class="o">=</span> self<span class="o">.</span>packages<span class="o">.</span><span class="si">${</span>system<span class="si">}</span><span class="o">.</span>default<span class="p">;</span> <span class="c1"># (2)</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>      <span class="ss">python</span> <span class="o">=</span> my_tool<span class="o">.</span>config<span class="o">.</span>deps<span class="o">.</span>python<span class="p">;</span> <span class="c1"># (3)</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">in</span> <span class="p">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>      <span class="ss">default</span> <span class="o">=</span> pkgs<span class="o">.</span>mkShell <span class="p">{</span> <span class="c1"># (4)</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="ss">inputsFrom</span> <span class="o">=</span> <span class="p">[</span>my_tool<span class="o">.</span>devShell<span class="p">];</span> <span class="c1"># (5)</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="ss">packages</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>          python<span class="o">.</span>pkgs<span class="o">.</span>python-lsp-server <span class="c1"># (6)</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>          python<span class="o">.</span>pkgs<span class="o">.</span>python-lsp-ruff
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>          python<span class="o">.</span>pkgs<span class="o">.</span>pylsp-mypy
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>          python<span class="o">.</span>pkgs<span class="o">.</span>ipython
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>          pkgs<span class="o">.</span>ruff <span class="c1"># (7)</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>          pkgs<span class="o">.</span>black
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        <span class="p">];</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>      <span class="p">};</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    <span class="p">});</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>  <span class="p">};</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Get an instance of <code>nixpkgs</code> to use for <code>mkShell</code>, <code>ruff</code>, etc below.</li>
+<li>Get our default package, <code>my_tool</code> from this flakes outputs...</li>
+<li>...and a reference to the python interpreter it uses. </li>
+<li>Call <code>pkgs.mkShell</code> in order to be able to add custom <code>packages</code> or a <code>shellHook</code> to it. You could just use <code>my_tool.devShell</code> here if you are happy with the defaults.</li>
+<li>Get inputs from <code>mytool.devShell</code>, this includes your package &amp; its dependencies and a <code>shellHook</code> to set up editable installs.</li>
+<li>Use <code>python.pkgs</code> to get additional python tools into the shell while ensuring that the correct python interpreter is used.</li>
+<li>Use <code>pkgs</code> to get tools which aren't implemented in python, such as <code>ruff</code> and <code>black</code>.</li>
+</ol>
+<p>With that done, let's start a development shell, an ipython interpreter in it, import <code>my_tool</code> and <code>requests</code>, its dependency and
+see where they are imported from:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>nix<span class="w"> </span>develop
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">evaluating derivation &#39;git+file://[path_to_your_repo]#devShells.x86_64-linux.default&#39;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">Some python dependencies of /Users/phaer/src/dream2nix/examples/packages/languages/python-local-development are installed in editable mode</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">  my-tool</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">    installed at: .</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="gp">$ </span>ipython
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="go">[...]</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="go">In [1]: import my_tool</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="go">In [2]: my_tool.__file__</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="go">Out[2]: &#39;[path_to_your_repo]/src/my_tool/__init__.py&#39;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="go">In [3]: import requests</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="go">In [4]: requests.__file__</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="go">Out[4]: &#39;/nix/store/[nix hash]-python3-3.11.9-env/lib/python3.11/site-packages/requests/__init__.py&#39;</span>
+</code></pre></div>
+<ul>
+<li><code>my_tool</code> is imported from your repository, as it's an editable install, akin to <code>pip install -e .</code></li>
+<li><code>requests</code> is loaded from a python environment, generated by our expression above. Changes to it will only be visible after the shell is restarted.</li>
+</ul>
+<p>All the other tools declared in our <code>devShell</code> above, i.e. <code>ruff</code> and <code>black</code> should be in <code>PATH</code> and/or <code>PYTHONPATH</code> as well.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/nix-community/dream2nix" target="_blank" rel="noopener" title="Dream2nix on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://matrix.to/#/#dream2nix:nixos.org" target="_blank" rel="noopener" title="Dream2nix Matrix Channel" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0 0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4-3.5 9.4-8.7 17.7-14.2 24.7-4.8 6.2-9.7 11-13.3 14.3-1.8 1.6-3.3 2.9-4.3 3.7-.5.4-.9.7-1.1.8l-.2.2C1 327.2-1.4 334.4.8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5 9.2-3.5 17.8-7.4 25.3-11.4C134.1 343.3 169.8 352 208 352zm240-176c0 112.3-99.1 196.9-216.5 207 24.3 74.4 104.9 129 200.5 129 38.2 0 73.9-8.7 104.7-23.9 7.5 4 16 7.9 25.2 11.4 18.3 6.9 40.3 12.5 62.1 12.5 6.9 0 13.1-4.5 15.2-11.1 2.1-6.6-.2-13.8-5.8-17.9l-.2-.2c-.2-.2-.6-.4-1.1-.8-1-.8-2.5-2-4.3-3.7-3.6-3.3-8.5-8.1-13.3-14.3-5.5-7-10.7-15.4-14.2-24.7 24.9-29 39.6-64.7 39.6-103.4 0-92.8-84.9-168.9-192.6-175.5.4 5.1.6 10.3.6 15.5z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "instant", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.top", "toc.follow", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>
